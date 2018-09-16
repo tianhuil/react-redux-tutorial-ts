@@ -1,19 +1,25 @@
-import * as React from 'react';
+import * as React from 'react'
 import { connect } from 'react-redux'
-import { LinkComponent } from '../components/Link'
-import { setFilter } from '../state/actions'
-import { State, Filter } from '../state/state'
+import { Dispatch } from 'redux'
 
-interface Props {
+import { LinkComponent } from '../components/link'
+import { setFilter } from '../state/actions'
+import { Filter, State } from '../state/state'
+
+interface IProps {
   filter: Filter
   children: React.ReactNode,
 }
 
+const mapStateToProps = (state: State, props: IProps) => ({
+  active: (props.filter === state.filter)
+})
+
+const mapDispatchToProps =(dispatch: Dispatch, props: IProps) => ({
+  onClick: () => dispatch(setFilter(props.filter))
+})
+
 export const LinkContainer = connect(
-  (state: State, props: Props) => ({
-    active: props.filter == state.filter
-  }),
-  (dispatch, props: Props) => ({
-    onClick: () => dispatch(setFilter(props.filter))
-  }),
+  mapStateToProps,
+  mapDispatchToProps,
 )(LinkComponent)

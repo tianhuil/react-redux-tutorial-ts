@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Filter } from '../state/state'
+
 import { LinkContainer } from '../containers/link'
+import { Filter } from '../state/state'
+
 
 export const FooterComponent: React.SFC<{}> = () => (
   <div>

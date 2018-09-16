@@ -1,16 +1,17 @@
 import * as React from 'react';
 
-interface Props {
+
+interface IProps {
   active: boolean,
-  onClick: () => void,
-  children: React.ReactNode,
+  onClick: () => void
 };
 
-export const LinkComponent: React.SFC<Props> = ({active, onClick, children}) => {
+export const LinkComponent: React.SFC<IProps> = ({active, onClick, children}) => {
   if (active) {
     return <span>{children}</span>
   }
   return (
+    // tslint:disable-next-line jsx-no-lambda
     <a href="" onClick={e => {e.preventDefault(); onClick();}}>
       {children}
     </a>

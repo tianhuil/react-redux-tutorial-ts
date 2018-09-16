@@ -1,12 +1,14 @@
 import * as React from 'react';
+
 import { Todo } from '../state/state'
 
-interface Props {
+
+interface IProps {
   onClick: () => void,
   todo: Todo,
 };
 
-export const TodoComponent: React.SFC<Props> = ({onClick, todo}) => (
+export const TodoComponent: React.SFC<IProps> = ({onClick, todo}) => (
   <li key={todo.id}
     onClick={onClick}
     style={{textDecoration: todo.completed ? 'line-through' : 'none'}}
