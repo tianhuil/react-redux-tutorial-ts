@@ -1,7 +1,7 @@
 export enum Filter {
   SHOW_ALL,
   SHOW_COMPLETED,
-  SHOW_ACTIVE
+  SHOW_INCOMPLETE,
 };
 
 export type State =  Readonly<{
