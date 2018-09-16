@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 
 import { LinkComponent } from '../components/link'
+import { Filter, State } from '../state'
 import { setFilter } from '../state/actions'
-import { Filter, State } from '../state/state'
 
 interface IProps {
   filter: Filter

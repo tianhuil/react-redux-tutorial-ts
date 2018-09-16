@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux'
 
 import { TodoListComponent } from '../components/todo-list'
+import { Filter, State, Todo } from '../state';
 import { toggleTodo } from '../state/actions';
-import { Filter, State, Todo } from '../state/state';
 
 
 function getTodos(todos: ReadonlyArray<Todo>, filter: Filter): ReadonlyArray<Todo> {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Todo } from '../state/state'
+import { Todo } from '../state'
 
 
 interface IProps {

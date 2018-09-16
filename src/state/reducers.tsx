@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { ActionType, getType } from 'typesafe-actions';
+import { Filter, State, Todo } from './';
 import * as actions from './actions'
-import { Filter, State, Todo } from './state';
 
 
 type Action = ActionType<typeof actions>

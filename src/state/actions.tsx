@@ -1,5 +1,5 @@
 import { createAction } from 'typesafe-actions';
-import { Filter } from './state'
+import { Filter } from './'
 
 
 export const addTodo = createAction("@todo/ADD_TODO", resolve => {
