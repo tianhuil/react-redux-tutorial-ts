@@ -4,12 +4,12 @@ export enum Filter {
   SHOW_INCOMPLETE,
 };
 
-export type State =  Readonly<{
+export type State = Readonly<{
   filter: Filter;
   todos: ReadonlyArray<Todo>;
 }>;
 
-export type Todo =  Readonly<{
+export type Todo = Readonly<{
   id: number;
   text: string;
   completed: boolean;
