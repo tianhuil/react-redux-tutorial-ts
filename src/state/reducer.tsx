@@ -1,19 +1,11 @@
+import { LocationChangeAction, RouterAction, routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
-import { ActionType, getType } from 'typesafe-actions';
-import { Filter, State, Todo } from './';
+import { ActionType, getType, StateType } from 'typesafe-actions';
+
+import { Todo } from './';
 import * as actions from './actions'
 
-
-type Action = ActionType<typeof actions>
-
-function filter(state: Filter = Filter.SHOW_ALL, action: Action): Filter {
-  switch (action.type) {
-    case getType(actions.setFilter):
-      return action.payload
-    default:
-      return state
-  }
-}
+export type Action = ActionType<typeof actions> | RouterAction | LocationChangeAction
 
 function todos(state: ReadonlyArray<Todo> = [], action: Action): ReadonlyArray<Todo> {
   switch (action.type) {
@@ -35,7 +27,9 @@ function todos(state: ReadonlyArray<Todo> = [], action: Action): ReadonlyArray<T
   }
 }
 
-export default combineReducers<State, Action>({
-  filter,
+export const reducer = combineReducers({
+  router: routerReducer,
   todos,
 })
+
+export type State = StateType<typeof reducer>

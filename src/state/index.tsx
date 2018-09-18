@@ -1,16 +1,11 @@
 export enum Filter {
-  SHOW_ALL,
-  SHOW_COMPLETED,
-  SHOW_INCOMPLETE,
-};
-
-export type State = Readonly<{
-  filter: Filter;
-  todos: ReadonlyArray<Todo>;
-}>;
+  SHOW_ALL        = "all",
+  SHOW_COMPLETED  = "completed",
+  SHOW_INCOMPLETE = "incomplete",
+}
 
 export type Todo = Readonly<{
   id: number;
   text: string;
   completed: boolean;
-}>;
+}>

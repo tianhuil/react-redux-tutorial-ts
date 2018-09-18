@@ -1,22 +1,30 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 import { Dispatch } from 'redux'
 
 import { LinkComponent } from '../components/link'
-import { Filter, State } from '../state'
-import { setFilter } from '../state/actions'
+import { Filter } from '../state/'
+import { State } from '../state/reducer'
 
 interface IProps {
   filter: Filter
   children: React.ReactNode,
 }
 
+function getFilterFromState(state: State): string {
+  if (state === null || state.router === null || state.router.location == null) {
+    return ''
+  }
+  return state.router.location.pathname.slice(1)
+}
+
 const mapStateToProps = (state: State, props: IProps) => ({
-  active: (props.filter === state.filter)
+  active: (props.filter === getFilterFromState(state))
 })
 
 const mapDispatchToProps =(dispatch: Dispatch, props: IProps) => ({
-  onClick: () => dispatch(setFilter(props.filter))
+  onClick: () => dispatch(push(props.filter))
 })
 
 export const LinkContainer = connect(

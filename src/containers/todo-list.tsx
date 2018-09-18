@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux'
 
 import { TodoListComponent } from '../components/todo-list'
-import { Filter, State, Todo } from '../state';
+import { Filter, Todo } from '../state';
 import { toggleTodo } from '../state/actions';
+import { State } from '../state/reducer'
 
 
 function getTodos(todos: ReadonlyArray<Todo>, filter: Filter): ReadonlyArray<Todo> {
@@ -18,8 +19,8 @@ function getTodos(todos: ReadonlyArray<Todo>, filter: Filter): ReadonlyArray<Tod
   }
 }
 
-const mapStateToProps = (state: State) => ({
-  todos: getTodos(state.todos, state.filter)
+const mapStateToProps = (state: State, props: { filter: string}) => ({
+  todos: getTodos(state.todos, props.filter as Filter)
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
