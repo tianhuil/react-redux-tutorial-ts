@@ -4,7 +4,7 @@ import { push } from 'react-router-redux'
 import { Dispatch } from 'redux'
 
 import { LinkComponent } from '../components/link'
-import { Filter } from '../state/'
+import { Filter } from '../model'
 import { State } from '../state/reducer'
 
 interface IProps {

@@ -2,7 +2,7 @@ import { LocationChangeAction, RouterAction, routerReducer } from 'react-router-
 import { combineReducers } from 'redux';
 import { ActionType, getType, StateType } from 'typesafe-actions';
 
-import { Todo } from './';
+import { Todo } from '../model';
 import * as actions from './actions'
 
 export type Action = ActionType<typeof actions> | RouterAction | LocationChangeAction

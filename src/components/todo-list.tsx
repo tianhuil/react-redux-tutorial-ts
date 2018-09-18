@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Todo } from '../state';
+import { Todo } from '../model';
 import { TodoComponent } from './todo';
 
 

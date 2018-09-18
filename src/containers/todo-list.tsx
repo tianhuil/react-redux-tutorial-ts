@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux'
 
 import { TodoListComponent } from '../components/todo-list'
-import { Filter, Todo } from '../state';
+import { Filter, Todo } from '../model';
 import { toggleTodo } from '../state/actions';
 import { State } from '../state/reducer'
 
