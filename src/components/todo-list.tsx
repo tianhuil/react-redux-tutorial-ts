@@ -4,12 +4,12 @@ import { Todo } from '../state';
 import { TodoComponent } from './todo';
 
 
-interface IPropsx {
+interface IProps {
   todos: ReadonlyArray<Todo>,
   onClick: (_ :number) => void,
 }
 
-export const TodoListComponent: React.SFC<IPropsx> = ({todos, onClick}) => (
+export const TodoListComponent: React.SFC<IProps> = ({todos, onClick}) => (
   <ul>
     { // tslint:disable-next-line jsx-no-lambda
       todos.map((todo: Todo) => (
