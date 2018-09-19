@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import { Dispatch } from 'redux'
@@ -9,7 +8,6 @@ import { State } from '../state/reducer'
 
 interface IProps {
   filter: Filter
-  children: React.ReactNode,
 }
 
 function getFilterFromState(state: State): string {
