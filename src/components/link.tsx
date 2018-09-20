@@ -4,7 +4,7 @@ import * as React from 'react';
 interface IProps {
   active: boolean,
   onClick: () => void
-};
+}
 
 export const LinkComponent: React.SFC<IProps> = ({active, onClick, children}) => {
   if (active) {

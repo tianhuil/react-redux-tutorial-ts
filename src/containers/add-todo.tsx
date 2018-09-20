@@ -4,11 +4,8 @@ import { Dispatch } from 'redux'
 
 import { addTodo } from '../state/actions'
 
-interface IProps {
-  dispatch: Dispatch,
-}
 
-const AddTodoComponent: React.SFC<IProps> = ({dispatch}) => {
+const AddTodoComponent: React.SFC<{ dispatch: Dispatch }> = ({dispatch}) => {
   let input: HTMLInputElement | null;
 
   return (<div>

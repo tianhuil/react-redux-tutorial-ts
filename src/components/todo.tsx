@@ -6,7 +6,7 @@ import { Todo } from '../model'
 interface IProps {
   onClick: () => void,
   todo: Todo,
-};
+}
 
 export const TodoComponent: React.SFC<IProps> = ({onClick, todo}) => (
   <li key={todo.id}
