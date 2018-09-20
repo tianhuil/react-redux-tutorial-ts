@@ -14,21 +14,15 @@ import { reducer } from './state/reducer'
 
 const history = createHistory()
 
-/* eslint-disable no-underscore-dangle */
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const middleware = routerMiddleware(history)
-/* eslint-enable */
 
 const store = createStore(
   reducer,
   composeEnhancers(applyMiddleware(middleware))
 )
 
-export interface IRouteInfo {
-  filter: string
-}
-
-const Layout: React.SFC<RouteComponentProps<IRouteInfo>> = ({ match: { params } }) => (
+const Layout: React.SFC<RouteComponentProps<{filter: string}>> = ({ match: { params } }) => (
   <div className="App">
     <AddTodoContainer />
     <TodoListContainer filter={params.filter}/>
