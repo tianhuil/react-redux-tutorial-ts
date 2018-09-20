@@ -7,5 +7,6 @@ export enum Filter {
 export type Todo = Readonly<{
   id: number;
   text: string;
+  created: Date;
   completed: boolean;
 }>

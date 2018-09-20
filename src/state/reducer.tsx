@@ -12,6 +12,7 @@ function todos(state: ReadonlyArray<Todo> = [], action: Action): ReadonlyArray<T
     case getType(actions.addTodo):
       const newTodo: Todo = {
         completed: false,
+        created: new Date(),
         id: state.length,
         text: action.payload,
       }

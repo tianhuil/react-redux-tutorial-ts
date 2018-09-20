@@ -13,6 +13,6 @@ export const TodoComponent: React.SFC<IProps> = ({onClick, todo}) => (
     onClick={onClick}
     style={{textDecoration: todo.completed ? 'line-through' : 'none'}}
   >
-    {todo.text}
+    {todo.text} ({todo.created.toLocaleString()})
   </li>
 )
