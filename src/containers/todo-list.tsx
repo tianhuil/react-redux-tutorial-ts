@@ -25,7 +25,7 @@ const mapStateToProps = (state: State, props: { filter: string }) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   onClick: (id: number) => dispatch(toggleTodo(id))
- })
+})
 
 export const TodoListContainer = connect(
   mapStateToProps,
