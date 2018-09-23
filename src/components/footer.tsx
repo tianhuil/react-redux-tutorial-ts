@@ -6,9 +6,8 @@ import { Filter } from '../model'
 
 export const FooterComponent: React.SFC<{}> = () => (
   <div>
-    Show {' '}
-    <LinkContainer filter={Filter.SHOW_ALL}> All </LinkContainer>{', '}
-    <LinkContainer filter={Filter.SHOW_COMPLETED}> Completed </LinkContainer>{', '}
-    <LinkContainer filter={Filter.SHOW_INCOMPLETE}> Incomplete </LinkContainer>
+    <LinkContainer filter={Filter.SHOW_ALL} />
+    <LinkContainer filter={Filter.SHOW_COMPLETED} />
+    <LinkContainer filter={Filter.SHOW_INCOMPLETE} />
   </div>
 )

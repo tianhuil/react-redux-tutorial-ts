@@ -1,19 +1,25 @@
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Radio from '@material-ui/core/Radio'
+
 import * as React from 'react';
+
+import { Filter } from '../model'
 
 
 interface IProps {
   active: boolean,
-  onClick: () => void
+  filter: Filter,
+  onClick: () => void,
 }
 
-export const LinkComponent: React.SFC<IProps> = ({active, onClick, children}) => {
-  if (active) {
-    return <span>{children}</span>
-  }
-  return (
-    // tslint:disable-next-line jsx-no-lambda
-    <a href="" onClick={e => {e.preventDefault(); onClick();}}>
-      {children}
-    </a>
-  )
-};
+export const LinkComponent: React.SFC<IProps> = ({active, onClick, children, filter}) => (
+  <FormControlLabel
+    value={filter}
+    control={<Radio />}
+    label={filter}
+    checked={active}
+    onChange={
+      // tslint:disable-next-line jsx-no-lambda
+      e => {e.preventDefault(); onClick();}
+    }/>
+)
