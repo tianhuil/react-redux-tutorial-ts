@@ -25,7 +25,7 @@ const styles = (theme: Theme) => createStyles({
 const Layout: React.SFC<RouteComponentProps<{filter: string}>> = ({ match: { params } }) => (
   <div>
     <AddTodoContainer/>
-    <TodoListContainer filter={params.filter}/>
+    <TodoListContainer filter={params.filter as Filter}/>
     <FooterComponent/>
   </div>
 )

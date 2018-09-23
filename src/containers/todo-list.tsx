@@ -18,8 +18,8 @@ function getTodos(todos: ReadonlyArray<Todo>, filter: Filter): ReadonlyArray<Tod
   }
 }
 
-const mapStateToProps = (state: State, props: { filter: string }) => ({
-  todos: getTodos(state.todos, props.filter as Filter)
+const mapStateToProps = (state: State, props: { filter: Filter }) => ({
+  todos: getTodos(state.todos, props.filter)
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
