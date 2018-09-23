@@ -38,7 +38,7 @@ const AppRaw: React.SFC<WithStyles<typeof styles>> = ({classes}) => (
           // tslint:disable-next-line jsx-no-lambda
           () => <Redirect to={Filter.SHOW_ALL}/>
         }/>
-        <Route path="/:filter?" component={Layout}/>
+        <Route path="/:filter" component={Layout}/>
       </Paper>
     </ThemeComponent>
   </Middleware>
