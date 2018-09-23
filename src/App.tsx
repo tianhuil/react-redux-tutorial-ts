@@ -1,7 +1,7 @@
 import Paper from '@material-ui/core/Paper';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import * as React  from 'react'
-import { Redirect, Route, RouteComponentProps } from 'react-router'
+import { Redirect, Route, RouteComponentProps } from 'react-router-dom'
 
 import { FooterComponent } from './components/footer'
 import { AddTodoContainer } from './containers/add-todo'
