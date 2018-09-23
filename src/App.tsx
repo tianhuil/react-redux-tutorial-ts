@@ -1,14 +1,14 @@
 import Paper from '@material-ui/core/Paper';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import * as React  from 'react'
-import { RouteComponentProps } from 'react-router'
-import { Route } from 'react-router-dom'
+import { Redirect, Route, RouteComponentProps } from 'react-router'
 
 import { FooterComponent } from './components/footer'
 import { AddTodoContainer } from './containers/add-todo'
 import { TodoListContainer } from './containers/todo-list'
 import { Middleware } from './lib/middleware'
 import { ThemeComponent } from './lib/theme'
+import { Filter } from './model/'
 
 
 const styles = (theme: Theme) => createStyles({
@@ -34,6 +34,10 @@ const AppRaw: React.SFC<WithStyles<typeof styles>> = ({classes}) => (
   <Middleware>
     <ThemeComponent>
       <Paper className={classes.paper} elevation={3}>
+        <Route exact={true} path="/" render={
+          // tslint:disable-next-line jsx-no-lambda
+          () => <Redirect to={Filter.SHOW_ALL}/>
+        }/>
         <Route path="/:filter?" component={Layout}/>
       </Paper>
     </ThemeComponent>
