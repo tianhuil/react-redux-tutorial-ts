@@ -1,7 +1,9 @@
+import Checkbox from '@material-ui/core/Checkbox';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import * as React from 'react';
 
 import { Todo } from '../model'
-
 
 interface IProps {
   onClick: () => void,
@@ -9,10 +11,15 @@ interface IProps {
 }
 
 export const TodoComponent: React.SFC<IProps> = ({onClick, todo}) => (
-  <li key={todo.id}
+  <ListItem key={todo.id}
     onClick={onClick}
+    dense={true}
     style={{textDecoration: todo.completed ? 'line-through' : 'none'}}
   >
-    {todo.text} ({todo.created.toLocaleString()})
-  </li>
+    <Checkbox
+      checked={todo.completed}
+      tabIndex={-1}
+    />
+    <ListItemText primary={todo.text} secondary={todo.created.toLocaleString()} />
+  </ListItem>
 )

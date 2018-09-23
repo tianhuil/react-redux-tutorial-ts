@@ -1,3 +1,4 @@
+import List from '@material-ui/core/List';
 import * as React from 'react';
 
 import { Todo } from '../model';
@@ -10,7 +11,7 @@ interface IProps {
 }
 
 export const TodoListComponent: React.SFC<IProps> = ({todos, onClick}) => (
-  <ul>
+  <List>
     { // tslint:disable-next-line jsx-no-lambda
       todos.map((todo: Todo) => (
       <TodoComponent
@@ -20,5 +21,5 @@ export const TodoListComponent: React.SFC<IProps> = ({todos, onClick}) => (
         onClick={() => onClick(todo.id)}
       />
     ))}
-  </ul>
+  </List>
 )
