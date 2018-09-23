@@ -6,7 +6,6 @@ import { Filter, Todo } from '../model';
 import { toggleTodo } from '../state/actions';
 import { State } from '../state/reducer'
 
-
 function getTodos(todos: ReadonlyArray<Todo>, filter: Filter): ReadonlyArray<Todo> {
   switch (filter) {
     case Filter.SHOW_COMPLETED:
