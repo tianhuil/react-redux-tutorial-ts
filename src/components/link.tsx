@@ -12,7 +12,7 @@ interface IProps {
   onClick: () => void,
 }
 
-export const LinkComponent: React.SFC<IProps> = ({active, onClick, children, filter}) => (
+export const LinkComponent: React.SFC<IProps> = ({active, onClick, filter}) => (
   <FormControlLabel
     value={filter}
     control={<Radio />}
